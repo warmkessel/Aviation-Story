@@ -22,6 +22,8 @@
 		2B789D4A1648B7C4004A89C6 /* Aviation_Story.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B789D481648B7C4004A89C6 /* Aviation_Story.xcdatamodeld */; };
 		2B789D4D1648B7C4004A89C6 /* AvstryMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B789D4C1648B7C4004A89C6 /* AvstryMasterViewController.m */; };
 		2B789D501648B7C4004A89C6 /* AvstryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B789D4F1648B7C4004A89C6 /* AvstryDetailViewController.m */; };
+		2B789D581648B82C004A89C6 /* AvstryCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B789D571648B82C004A89C6 /* AvstryCommunication.m */; };
+		2B789D5B1648B839004A89C6 /* GDataXmlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B789D5A1648B839004A89C6 /* GDataXmlNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,10 @@
 		2B789D4C1648B7C4004A89C6 /* AvstryMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvstryMasterViewController.m; sourceTree = "<group>"; };
 		2B789D4E1648B7C4004A89C6 /* AvstryDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvstryDetailViewController.h; sourceTree = "<group>"; };
 		2B789D4F1648B7C4004A89C6 /* AvstryDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvstryDetailViewController.m; sourceTree = "<group>"; };
+		2B789D561648B82C004A89C6 /* AvstryCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvstryCommunication.h; sourceTree = "<group>"; };
+		2B789D571648B82C004A89C6 /* AvstryCommunication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvstryCommunication.m; sourceTree = "<group>"; };
+		2B789D591648B839004A89C6 /* GDataXmlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDataXmlNode.h; path = Common/Optional/XMLSupport/GDataXmlNode.h; sourceTree = "<group>"; };
+		2B789D5A1648B839004A89C6 /* GDataXmlNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDataXmlNode.m; path = Common/Optional/XMLSupport/GDataXmlNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,10 @@
 		2B789D301648B7C4004A89C6 /* Aviation Story */ = {
 			isa = PBXGroup;
 			children = (
+				2B789D591648B839004A89C6 /* GDataXmlNode.h */,
+				2B789D5A1648B839004A89C6 /* GDataXmlNode.m */,
+				2B789D561648B82C004A89C6 /* AvstryCommunication.h */,
+				2B789D571648B82C004A89C6 /* AvstryCommunication.m */,
 				2B789D391648B7C4004A89C6 /* AvstryAppDelegate.h */,
 				2B789D3A1648B7C4004A89C6 /* AvstryAppDelegate.m */,
 				2B789D421648B7C4004A89C6 /* MainStoryboard_iPhone.storyboard */,
@@ -195,6 +205,8 @@
 				2B789D4A1648B7C4004A89C6 /* Aviation_Story.xcdatamodeld in Sources */,
 				2B789D4D1648B7C4004A89C6 /* AvstryMasterViewController.m in Sources */,
 				2B789D501648B7C4004A89C6 /* AvstryDetailViewController.m in Sources */,
+				2B789D581648B82C004A89C6 /* AvstryCommunication.m in Sources */,
+				2B789D5B1648B839004A89C6 /* GDataXmlNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +297,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Aviation Story/Aviation Story-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Aviation Story/Aviation Story-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -296,7 +310,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Aviation Story/Aviation Story-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Aviation Story/Aviation Story-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -321,6 +337,7 @@
 				2B789D551648B7C4004A89C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

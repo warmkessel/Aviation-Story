@@ -7,7 +7,7 @@
 //
 
 #import "AvstryDetailViewController.h"
-
+#import "AvstryCommunication.h"
 @interface AvstryDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
@@ -68,5 +68,7 @@
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
 }
-
+- (IBAction) performRequest{
+    [AvstryCommunication performRequest];
+}
 @end
