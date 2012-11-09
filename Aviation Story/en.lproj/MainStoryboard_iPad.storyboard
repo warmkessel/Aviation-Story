@@ -29,6 +29,9 @@
                         <subviews>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="27">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="663" id="dUI-21-3sJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,21 +49,44 @@
                                     <action selector="performRequest" destination="4" eventType="touchUpInside" id="odX-04-1tf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecc-iP-Jj9">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Url" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bd-9b-aEQ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Desc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pls-K0-ZWb">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="27" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="CON-Cb-dBe"/>
-                            <constraint firstItem="27" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="LAk-gc-aCl"/>
+                            <constraint firstItem="Ecc-iP-Jj9" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="53" id="5gp-su-eYm"/>
+                            <constraint firstItem="pls-K0-ZWb" firstAttribute="leading" secondItem="1bd-9b-aEQ" secondAttribute="leading" type="default" id="D8F-ZY-R1j"/>
+                            <constraint firstItem="pls-K0-ZWb" firstAttribute="leading" secondItem="Ecc-iP-Jj9" secondAttribute="leading" type="default" id="GwB-e4-sqQ"/>
                             <constraint firstAttribute="bottom" secondItem="IfS-dN-jQj" secondAttribute="bottom" constant="140" id="OLF-Rb-8WA"/>
+                            <constraint firstItem="27" firstAttribute="top" secondItem="26" secondAttribute="top" constant="396" id="RLn-d1-hCN"/>
+                            <constraint firstItem="Ecc-iP-Jj9" firstAttribute="top" secondItem="26" secondAttribute="top" constant="35" id="ROH-Il-7Mx"/>
                             <constraint firstItem="IfS-dN-jQj" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="329" id="e7a-f9-ftK"/>
-                            <constraint firstItem="27" firstAttribute="centerY" secondItem="26" secondAttribute="centerY" type="default" id="fbb-bQ-YI1"/>
+                            <constraint firstItem="27" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="-13" id="ghX-gg-Sm3"/>
+                            <constraint firstItem="pls-K0-ZWb" firstAttribute="top" secondItem="Ecc-iP-Jj9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mfa-bJ-YzE"/>
+                            <constraint firstItem="1bd-9b-aEQ" firstAttribute="top" secondItem="26" secondAttribute="top" constant="116" id="vXa-5u-7dE"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="53"/>
                     <connections>
+                        <outlet property="descItem" destination="pls-K0-ZWb" id="9vS-bd-lX1"/>
                         <outlet property="detailDescriptionLabel" destination="27" id="29"/>
+                        <outlet property="titleItem" destination="Ecc-iP-Jj9" id="U8P-Tc-clq"/>
+                        <outlet property="urlItem" destination="1bd-9b-aEQ" id="tz9-MU-z2G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15" sceneMemberID="firstResponder"/>
@@ -141,21 +167,6 @@
             <point key="canvasLocation" x="-366" y="248"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AvstryDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AvstryDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="performRequest"/>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AvstryMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AvstryMasterViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

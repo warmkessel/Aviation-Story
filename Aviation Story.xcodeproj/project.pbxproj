@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B260A36164C81A200C2A466 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B260A35164C81A200C2A466 /* Episode.m */; };
 		2B789D291648B7C4004A89C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B789D281648B7C4004A89C6 /* UIKit.framework */; };
 		2B789D2B1648B7C4004A89C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B789D2A1648B7C4004A89C6 /* Foundation.framework */; };
 		2B789D2D1648B7C4004A89C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B789D2C1648B7C4004A89C6 /* CoreGraphics.framework */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B260A34164C81A200C2A466 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Episode.h; sourceTree = "<group>"; };
+		2B260A35164C81A200C2A466 /* Episode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Episode.m; sourceTree = "<group>"; };
 		2B789D241648B7C4004A89C6 /* Aviation Story.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aviation Story.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B789D281648B7C4004A89C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2B789D2A1648B7C4004A89C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -113,6 +116,8 @@
 				2B789D4E1648B7C4004A89C6 /* AvstryDetailViewController.h */,
 				2B789D4F1648B7C4004A89C6 /* AvstryDetailViewController.m */,
 				2B789D481648B7C4004A89C6 /* Aviation_Story.xcdatamodeld */,
+				2B260A34164C81A200C2A466 /* Episode.h */,
+				2B260A35164C81A200C2A466 /* Episode.m */,
 				2B789D311648B7C4004A89C6 /* Supporting Files */,
 			);
 			path = "Aviation Story";
@@ -207,6 +212,7 @@
 				2B789D501648B7C4004A89C6 /* AvstryDetailViewController.m in Sources */,
 				2B789D581648B82C004A89C6 /* AvstryCommunication.m in Sources */,
 				2B789D5B1648B839004A89C6 /* GDataXmlNode.m in Sources */,
+				2B260A36164C81A200C2A466 /* Episode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
