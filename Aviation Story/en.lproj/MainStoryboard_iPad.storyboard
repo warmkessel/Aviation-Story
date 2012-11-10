@@ -27,28 +27,6 @@
                         <rect key="frame" x="0.0" y="64" width="703" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="27">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="663" id="dUI-21-3sJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfS-dN-jQj">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="performRequest" destination="4" eventType="touchUpInside" id="odX-04-1tf"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecc-iP-Jj9">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -59,39 +37,48 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Desc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pls-K0-ZWb">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cri-s3-Sol" userLabel="TextView - Desc">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="jCG-2Q-G6f"/>
+                                    <constraint firstAttribute="width" constant="377" id="uRC-yI-evL"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LcK-Ah-tQt">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="ffI-or-0DI"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ecc-iP-Jj9" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="53" id="5gp-su-eYm"/>
-                            <constraint firstItem="pls-K0-ZWb" firstAttribute="leading" secondItem="1bd-9b-aEQ" secondAttribute="leading" type="default" id="D8F-ZY-R1j"/>
-                            <constraint firstItem="pls-K0-ZWb" firstAttribute="leading" secondItem="Ecc-iP-Jj9" secondAttribute="leading" type="default" id="GwB-e4-sqQ"/>
-                            <constraint firstAttribute="bottom" secondItem="IfS-dN-jQj" secondAttribute="bottom" constant="140" id="OLF-Rb-8WA"/>
-                            <constraint firstItem="27" firstAttribute="top" secondItem="26" secondAttribute="top" constant="396" id="RLn-d1-hCN"/>
-                            <constraint firstItem="Ecc-iP-Jj9" firstAttribute="top" secondItem="26" secondAttribute="top" constant="35" id="ROH-Il-7Mx"/>
-                            <constraint firstItem="IfS-dN-jQj" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="329" id="e7a-f9-ftK"/>
-                            <constraint firstItem="27" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="-13" id="ghX-gg-Sm3"/>
-                            <constraint firstItem="pls-K0-ZWb" firstAttribute="top" secondItem="Ecc-iP-Jj9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mfa-bJ-YzE"/>
-                            <constraint firstItem="1bd-9b-aEQ" firstAttribute="top" secondItem="26" secondAttribute="top" constant="116" id="vXa-5u-7dE"/>
+                            <constraint firstItem="LcK-Ah-tQt" firstAttribute="top" secondItem="Cri-s3-Sol" secondAttribute="top" type="default" id="5om-6n-97P"/>
+                            <constraint firstItem="Ecc-iP-Jj9" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="53" id="9p4-gC-iuh"/>
+                            <constraint firstAttribute="bottom" secondItem="1bd-9b-aEQ" secondAttribute="bottom" constant="187" id="PCD-rg-PaY"/>
+                            <constraint firstItem="Cri-s3-Sol" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="47" id="Syq-Jp-dcD"/>
+                            <constraint firstItem="Ecc-iP-Jj9" firstAttribute="top" secondItem="26" secondAttribute="top" constant="35" id="f8e-tp-5KG"/>
+                            <constraint firstAttribute="trailing" secondItem="LcK-Ah-tQt" secondAttribute="trailing" constant="57" id="gxd-Jg-Cvl"/>
+                            <constraint firstItem="Cri-s3-Sol" firstAttribute="top" secondItem="Ecc-iP-Jj9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mqi-iU-KaD"/>
+                            <constraint firstItem="Cri-s3-Sol" firstAttribute="leading" secondItem="1bd-9b-aEQ" secondAttribute="leading" type="default" id="x8S-co-kRT"/>
+                            <constraint firstItem="LcK-Ah-tQt" firstAttribute="bottom" secondItem="Cri-s3-Sol" secondAttribute="bottom" type="default" id="z9g-Ot-63B"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="53"/>
                     <connections>
-                        <outlet property="descItem" destination="pls-K0-ZWb" id="9vS-bd-lX1"/>
-                        <outlet property="detailDescriptionLabel" destination="27" id="29"/>
+                        <outlet property="descItem" destination="Cri-s3-Sol" id="2My-t6-QEe"/>
+                        <outlet property="imageItem" destination="LcK-Ah-tQt" id="vcI-kb-NeJ"/>
                         <outlet property="titleItem" destination="Ecc-iP-Jj9" id="U8P-Tc-clq"/>
                         <outlet property="urlItem" destination="1bd-9b-aEQ" id="tz9-MU-z2G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="248"/>
+            <point key="canvasLocation" x="422" y="248"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="18">
@@ -167,6 +154,24 @@
             <point key="canvasLocation" x="-366" y="248"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AvstryDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AvstryDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descItem" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageItem" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleItem" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="urlItem" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="AvstryMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AvstryMasterViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

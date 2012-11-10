@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GDataXmlNode.h"
 
 @interface AvstryCommunication : NSObject
-+ (void) performRequest;
++ (GDataXMLDocument*) performRequest;
 @end

@@ -10,10 +10,14 @@
 
 @interface AvstryDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
+
 @property (strong, nonatomic) id detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
-- (IBAction) performRequest;
+@property (weak, nonatomic) IBOutlet UILabel *titleItem;
+@property (weak, nonatomic) IBOutlet UITextView *descItem;
+@property (weak, nonatomic) IBOutlet UILabel *urlItem;
+@property (weak, nonatomic) IBOutlet UIImageView *imageItem;
 
 @end

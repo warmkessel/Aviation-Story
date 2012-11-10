@@ -36,7 +36,20 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+        
+        self.titleItem.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
+        self.descItem.font = [UIFont fontWithName:@"Times New Roman" size:16];
+        self.urlItem.font = [UIFont fontWithName:@"Times New Roman" size:12];
+        
+        self.titleItem.text = [[self.detailItem valueForKey:@"title"] description];
+        self.descItem.text = [[self.detailItem valueForKey:@"desc"] description];
+        self.urlItem.text = [[self.detailItem valueForKey:@"url"] description];
+        
+        NSURL * imageURL = [NSURL URLWithString:[[self.detailItem valueForKey:@"image"] description]];
+        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+        self.imageItem.image = [UIImage imageWithData:imageData];
+        
+        
     }
 }
 
@@ -67,8 +80,5 @@
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
-}
-- (IBAction) performRequest{
-    [AvstryCommunication performRequest];
 }
 @end

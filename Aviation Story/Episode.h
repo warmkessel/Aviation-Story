@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-
 @interface Episode : NSManagedObject
 
 @property (nonatomic, retain) NSDate * timeStamp;

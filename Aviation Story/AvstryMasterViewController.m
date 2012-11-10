@@ -9,6 +9,9 @@
 #import "AvstryMasterViewController.h"
 
 #import "AvstryDetailViewController.h"
+#import "AvstryCommunication.h"
+#import "GDataXmlNode.h"
+
 
 @interface AvstryMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -31,7 +34,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(requestData:)];
+    
+//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (AvstryDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
@@ -137,7 +142,7 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Episode" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
@@ -229,7 +234,67 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    cell.textLabel.text = [[object valueForKey:@"title"] description];
 }
 
+- (void)requestData:(id)sender
+{
+    GDataXMLDocument *doc = [AvstryCommunication performRequest];
+    if (doc == nil) { return ;}
+    NSArray *orderDataArray = [doc.rootElement elementsForName:@"channel"];
+    for(GDataXMLElement *orderDataElement in orderDataArray){
+        NSArray *itemDataArray = [orderDataElement elementsForName:@"item"];
+        for(GDataXMLElement *itemDataElement in itemDataArray){
+            
+
+            NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+            NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+            NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+            // If appropriate, configure the new managed object.
+            // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+            [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+            
+
+            NSArray *titleDataArray = [itemDataElement elementsForName:@"title"];
+            for(GDataXMLElement *titleDataElement in titleDataArray){
+                if([titleDataElement childCount] > 0){  
+                    //NSLog(@"%@", titleDataElement.stringValue);
+                    [newManagedObject setValue:(titleDataElement.stringValue) forKey:(@"title")];
+                }
+            }
+            NSArray *descDataArray = [itemDataElement elementsForName:@"description"];
+            for(GDataXMLElement *descDataElement in descDataArray){
+                if([descDataElement childCount] > 0){
+                    [newManagedObject setValue:(descDataElement.stringValue) forKey:(@"desc")];
+                }
+            }
+            NSArray *enclosureDataArray = [itemDataElement elementsForName:@"enclosure"];
+            for(GDataXMLElement *enclosureDataElement in enclosureDataArray){
+                [newManagedObject setValue:([enclosureDataElement attributeForName:@"url"].stringValue) forKey:(@"url")];
+            
+            }
+            NSArray *imageDataArray = [itemDataElement elementsForName:@"itunes:image"];
+            for(GDataXMLElement *imageDataElement in imageDataArray){
+                NSLog(@"%@", [imageDataElement attributeForName:@"href"].stringValue);
+                [newManagedObject setValue:([imageDataElement attributeForName:@"href"].stringValue) forKey:(@"image")];
+                
+            }
+            // Save the context.
+            NSError *error = nil;
+            if (![context save:&error]) {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                abort();
+            }
+
+                    
+                    
+
+        }
+    }
+    NSLog(@"Done");
+//    - (void)insertNewObject:(id)sender
+
+}
 @end
