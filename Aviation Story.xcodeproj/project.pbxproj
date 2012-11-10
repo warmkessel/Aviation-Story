@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B260A36164C81A200C2A466 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B260A35164C81A200C2A466 /* Episode.m */; };
 		2B260A4D164CC82500C2A466 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B260A4C164CC82500C2A466 /* MediaPlayer.framework */; };
 		2B789D291648B7C4004A89C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B789D281648B7C4004A89C6 /* UIKit.framework */; };
 		2B789D2B1648B7C4004A89C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B789D2A1648B7C4004A89C6 /* Foundation.framework */; };
@@ -26,11 +25,10 @@
 		2B789D501648B7C4004A89C6 /* AvstryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B789D4F1648B7C4004A89C6 /* AvstryDetailViewController.m */; };
 		2B789D581648B82C004A89C6 /* AvstryCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B789D571648B82C004A89C6 /* AvstryCommunication.m */; };
 		2B789D5B1648B839004A89C6 /* GDataXmlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B789D5A1648B839004A89C6 /* GDataXmlNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2BA57E97164E162D0093A702 /* AvstryEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA57E96164E162D0093A702 /* AvstryEpisode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B260A34164C81A200C2A466 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Episode.h; sourceTree = "<group>"; };
-		2B260A35164C81A200C2A466 /* Episode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Episode.m; sourceTree = "<group>"; };
 		2B260A49164CC4FD00C2A466 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2B260A4C164CC82500C2A466 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2B789D241648B7C4004A89C6 /* Aviation Story.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aviation Story.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +56,8 @@
 		2B789D571648B82C004A89C6 /* AvstryCommunication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvstryCommunication.m; sourceTree = "<group>"; };
 		2B789D591648B839004A89C6 /* GDataXmlNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDataXmlNode.h; path = Common/Optional/XMLSupport/GDataXmlNode.h; sourceTree = "<group>"; };
 		2B789D5A1648B839004A89C6 /* GDataXmlNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDataXmlNode.m; path = Common/Optional/XMLSupport/GDataXmlNode.m; sourceTree = "<group>"; };
+		2BA57E95164E162D0093A702 /* AvstryEpisode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvstryEpisode.h; sourceTree = "<group>"; };
+		2BA57E96164E162D0093A702 /* AvstryEpisode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvstryEpisode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +109,8 @@
 		2B789D301648B7C4004A89C6 /* Aviation Story */ = {
 			isa = PBXGroup;
 			children = (
+				2BA57E95164E162D0093A702 /* AvstryEpisode.h */,
+				2BA57E96164E162D0093A702 /* AvstryEpisode.m */,
 				2B789D481648B7C4004A89C6 /* Aviation_Story.xcdatamodeld */,
 				2B789D391648B7C4004A89C6 /* AvstryAppDelegate.h */,
 				2B789D3A1648B7C4004A89C6 /* AvstryAppDelegate.m */,
@@ -118,8 +120,6 @@
 				2B789D4F1648B7C4004A89C6 /* AvstryDetailViewController.m */,
 				2B789D4B1648B7C4004A89C6 /* AvstryMasterViewController.h */,
 				2B789D4C1648B7C4004A89C6 /* AvstryMasterViewController.m */,
-				2B260A34164C81A200C2A466 /* Episode.h */,
-				2B260A35164C81A200C2A466 /* Episode.m */,
 				2B789D591648B839004A89C6 /* GDataXmlNode.h */,
 				2B789D5A1648B839004A89C6 /* GDataXmlNode.m */,
 				2B789D451648B7C4004A89C6 /* MainStoryboard_iPad.storyboard */,
@@ -218,7 +218,7 @@
 				2B789D501648B7C4004A89C6 /* AvstryDetailViewController.m in Sources */,
 				2B789D581648B82C004A89C6 /* AvstryCommunication.m in Sources */,
 				2B789D5B1648B839004A89C6 /* GDataXmlNode.m in Sources */,
-				2B260A36164C81A200C2A466 /* Episode.m in Sources */,
+				2BA57E97164E162D0093A702 /* AvstryEpisode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

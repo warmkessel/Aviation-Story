@@ -41,10 +41,10 @@
         self.descItem.font = [UIFont fontWithName:@"Times New Roman" size:16];
         self.urlItem.font = [UIFont fontWithName:@"Times New Roman" size:12];
         
-        self.titleItem.text = [[self.detailItem valueForKey:@"title"] description];
-        self.descItem.text = [[self.detailItem valueForKey:@"desc"] description];
-        self.urlItem.text = [[self.detailItem valueForKey:@"url"] description];
-        
+        self.titleItem.text = self.detailItem.title;
+        self.descItem.text = self.detailItem.desc;
+        self.urlItem.text = self.detailItem.url;
+           
         NSURL * imageURL = [NSURL URLWithString:[[self.detailItem valueForKey:@"image"] description]];
         NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
         self.imageItem.image = [UIImage imageWithData:imageData];

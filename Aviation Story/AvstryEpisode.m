@@ -6,14 +6,15 @@
 //  Copyright (c) 2012 James Warmkessel. All rights reserved.
 //
 
-#import "Episode.h"
+#import "AvstryEpisode.h"
 
 
-@implementation Episode
+@implementation AvstryEpisode
 
 @dynamic timeStamp;
 @dynamic title;
 @dynamic desc;
 @dynamic url;
+@dynamic image;
 
 @end

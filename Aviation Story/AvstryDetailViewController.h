@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AvstryEpisode.h"
 
 @interface AvstryDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) AvstryEpisode *detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 

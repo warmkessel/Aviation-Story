@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface Episode : NSManagedObject
+@interface AvstryEpisode : NSManagedObject
 
 @property (nonatomic, retain) NSDate * timeStamp;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * desc;
 @property (nonatomic, retain) NSString * url;
+@property (nonatomic, retain) NSString * image;
+
 @end

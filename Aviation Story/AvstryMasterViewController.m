@@ -118,7 +118,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        AvstryEpisode *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         self.detailViewController.detailItem = object;
     }
 }
@@ -127,7 +127,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        AvstryEpisode *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
@@ -249,7 +249,7 @@
 
             NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
             NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-            NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+            AvstryEpisode *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
             // If appropriate, configure the new managed object.
             // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
             [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
@@ -259,25 +259,24 @@
             for(GDataXMLElement *titleDataElement in titleDataArray){
                 if([titleDataElement childCount] > 0){  
                     //NSLog(@"%@", titleDataElement.stringValue);
-                    [newManagedObject setValue:(titleDataElement.stringValue) forKey:(@"title")];
+                    newManagedObject.title = titleDataElement.stringValue;
                 }
             }
             NSArray *descDataArray = [itemDataElement elementsForName:@"description"];
             for(GDataXMLElement *descDataElement in descDataArray){
                 if([descDataElement childCount] > 0){
-                    [newManagedObject setValue:(descDataElement.stringValue) forKey:(@"desc")];
+                    newManagedObject.desc = descDataElement.stringValue;
                 }
             }
             NSArray *enclosureDataArray = [itemDataElement elementsForName:@"enclosure"];
             for(GDataXMLElement *enclosureDataElement in enclosureDataArray){
-                [newManagedObject setValue:([enclosureDataElement attributeForName:@"url"].stringValue) forKey:(@"url")];
-            
+                newManagedObject.url = [enclosureDataElement attributeForName:@"url"].stringValue;            
             }
             NSArray *imageDataArray = [itemDataElement elementsForName:@"itunes:image"];
             for(GDataXMLElement *imageDataElement in imageDataArray){
-                NSLog(@"%@", [imageDataElement attributeForName:@"href"].stringValue);
-                [newManagedObject setValue:([imageDataElement attributeForName:@"href"].stringValue) forKey:(@"image")];
-                
+//                NSLog(@"%@", [imageDataElement attributeForName:@"href"].stringValue);
+                newManagedObject.image = [imageDataElement attributeForName:@"href"].stringValue;
+
             }
             // Save the context.
             NSError *error = nil;
